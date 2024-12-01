@@ -88,8 +88,5 @@ class _BodyStatsViewState extends State<BodyStatsView> {
         ),
       ),
     );
-
-    //   );
-    // }
   }
 }
