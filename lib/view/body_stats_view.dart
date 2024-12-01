@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../widget/gender_icon_widget.dart';
+import '../widget/gender_card.dart';
 import '../widget/weight_age_selector.dart';
 import '../widget/height_picker_widget.dart';
 
-class BodyStatsView extends StatefulWidget {
+class BodyStatsView extends StatelessWidget {
   const BodyStatsView({super.key});
-
-  @override
-  State<BodyStatsView> createState() => _BodyStatsViewState();
-}
-
-class _BodyStatsViewState extends State<BodyStatsView> {
-  String? selectedGender;
 
   @override
   Widget build(BuildContext context) {
@@ -27,38 +20,13 @@ class _BodyStatsViewState extends State<BodyStatsView> {
         ),
         centerTitle: false,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+      body: const Padding(
+        padding: EdgeInsets.all(8.0),
         child: Column(
           children: [
+            GenderCard(),
+            HeightPicker(),
             Expanded(
-              child: Row(
-                children: [
-                  GenderIconWidget(
-                    iconGender: Icons.male,
-                    genderText: 'Male',
-                    isSelected: selectedGender == 'Male',
-                    onTap: () {
-                      setState(() {
-                        selectedGender = 'Male';
-                      });
-                    },
-                  ),
-                  GenderIconWidget(
-                    iconGender: Icons.female,
-                    genderText: 'Female',
-                    isSelected: selectedGender == 'Female',
-                    onTap: () {
-                      setState(() {
-                        selectedGender = 'Female';
-                      });
-                    },
-                  ),
-                ],
-              ),
-            ),
-            const HeightPicker(),
-            const Expanded(
               child: Row(
                 children: [
                   WeightOrAgeSelector(
