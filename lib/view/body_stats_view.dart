@@ -65,7 +65,7 @@ class _BodyStatsViewState extends State<BodyStatsView> {
                     text: 'WEIGHT',
                   ),
                   WeightOrAgeSelector(
-                    text: 'WEIGHT',
+                    text: 'AGE',
                   ),
                 ],
               ),
